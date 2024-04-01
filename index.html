@@ -6,36 +6,86 @@
 			name="viewport"
 			content="width=device-width, initial-scale=1.0"
 		/>
-		<title>Gym Wbsite</title>
+		<title>Gym Website</title>
+		<link
+			rel="preconnect"
+			href="https://fonts.googleapis.com"
+		/>
+		<link
+			rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossorigin
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link
+			rel="stylesheet"
+			href="./styles/style.css"
+		/>
 	</head>
 	<body>
-		<header>
-			<div>Logo</div>
-			<nav>
-				<a href="http://">HOME</a>
-				<a href="mailto:">SERVICE</a>
-				<a href="http://">TRAINERS</a>
-				<a href="http://">TESTIMONIAL</a>
-				<a href="http://">CONTACT US</a>
+		<header class="header-container">
+			<img src="./assets/irongym-logo.png" />
+			<nav class="desktop-navbar">
+				<a href="#home">HOME</a>
+				<a href="#service:">SERVICE</a>
+				<a href="#trainers">TRAINERS</a>
+				<a href="#testimonial">TESTIMONIAL</a>
+				<a href="#contact-us">CONTACT US</a>
 			</nav>
-			<button type="button"></button>
+			<button
+				type="button"
+				class="header-button"
+			>
+				<a href="/#"></a> STARTED NOW
+			</button>
 		</header>
+		<nav class="mobile-navbar"></nav>
 		<main>
 			<section id="home">
-				<div class="section-title">
-					<h1>READY TO TRAIN YOUR BODY</h1>
-					<p>
-						Gym training is a structured and disciplined approach to physical
-						exercise that focuses on strength, endurance and overall fitness
-						improvement.
-					</p>
-					<button type="button">button</button>
+				<div class="home-background">
+					<div class="section-padding home-container">
+						<div class="home-title">
+							<h1>
+								READY TO TRAIN
+								<br />
+								<span>YOUR BODY</span>
+							</h1>
+							<p>
+								Gym training is a structured and disciplined approach to
+								physical exercise that focuses on strength, endurance and
+								overall fitness improvement.
+							</p>
+							<button
+								type="button"
+								class="main-button"
+							>
+								LET'S JOIN NOW
+							</button>
+						</div>
+						<article class="home-numbers">
+							<p><span>20+</span><br />Years of Experience</p>
+							<div></div>
+							<p><span>15K+</span><br />Members Join</p>
+							<div></div>
+							<p><span>14K+</span><br />Happy members</p>
+						</article>
+					</div>
+					<div class="home-image section-padding">
+						<img src="./assets/home-man.png" />
+					</div>
 				</div>
 			</section>
-			<section id="service">
+			<section
+				id="service"
+				class="section-padding"
+			>
 				<div>
 					<div class="section-title">
-						<h2>WHY CHOOSE US</h2>
+						<h2>WHY <span>CHOOSE US</span></h2>
 						<p>
 							Gym workouts offer a versatile and customisable experience,
 							allowing everyone to set specific fitness goals.
@@ -49,8 +99,8 @@
 					</div>
 				</div>
 				<div>
-					<div>
-						<h3>HAVE A LOT OF EXPERIENCE</h3>
+					<div class="section-subtitle">
+						<h3>HAVE A LOT OF <br /><span>EXPERIENCE</span></h3>
 						<p>
 							In quisque nunc dictumst etiam pellentesque et. Vel malesuada diam
 							lorem tellus. Amet mauris feugiat ipsum natoque odio donec. Sit at
@@ -65,26 +115,56 @@
 							orci risus felis eget lectus morbi. Et cursus mauris condimentum
 							pretium arcu sed dignissim.
 						</p>
-
-						<button type="button">button</button>
+						<button
+							type="button"
+							class="main-button"
+						>
+							ABOUT US
+						</button>
 					</div>
 				</div>
 			</section>
-
-			<section id="trainers">
+			<section
+				id="trainers"
+				class="section-padding"
+			>
 				<div>
-					<h2>OUR PROFFESSIONAL TRAINERS</h2>
+					<div class="section-title">
+						<h2>OUR PROFFESSIONAL <br /><span>TRAINERS</span></h2>
+						<p>
+							Whether you're looking to set up a home gym or enhance your
+							current workout routine
+						</p>
+					</div>
+				</div>
+			</section>
+			<section
+				id="testimonial"
+				class="section-padding"
+			>
+				<div class="section-title">
+					<h2>WHAT <span>CLIENTS SAY</span> WITH US</h2>
+				</div>
+			</section>
+			<section
+				id="contact-us"
+				class="section-padding"
+			>
+				<div class="section-subtitle">
+					<h3>LET´S START GYM <br /><span>TRAINING NOW</span></h3>
 					<p>
-						Whether you're looking to set up a home gym or enhance your current
-						workout routine
+						Get 50% off the first three classes you sign up for this month any
+						GYM membership
 					</p>
 				</div>
 			</section>
-			<section id="testimonial"><h2>WHAT CLIENTS SAY WITH US</h2></section>
-			<section id="contact-us">
-				<h2>LET´S START GYM TRAINING NOW</h2>
-			</section>
 		</main>
-		<footer>LOGO</footer>
+		<footer>
+			<div class="section-padding"><img src="./assets/irongym-logo.png" /></div>
+			<div class="footer-reserved">
+				<p>Privacy | Terms and condition</p>
+				<p>Ⓒ 2023 All rights reserved. IronGym Company</p>
+			</div>
+		</footer>
 	</body>
 </html>
