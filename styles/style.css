@@ -12,12 +12,19 @@
 	--main-font: "Bebas Neue", sans-serif;
 	--p-texts: "Poppins", "sans-serif";
 	font-size: 16px;
+	--back-gradient: linear-gradient(
+		180deg,
+		rgba(3, 3, 3, 1) 0%,
+		rgba(3, 3, 3, 0.83) 48%,
+		rgba(13, 13, 13, 0.71) 100%
+	);
 }
 
 body {
 	background-color: var(--black-color);
 	color: var(--white-color);
 	position: relative;
+	margin-bottom: 4rem;
 }
 
 h1,
@@ -31,7 +38,7 @@ h6 {
 
 p {
 	font-family: var(--p-texts);
-	font-size: 1rem;
+	font-size: 0.9rem;
 }
 
 span {
@@ -39,7 +46,7 @@ span {
 }
 
 .section-padding {
-	padding: 4rem 2rem 2rem 2rem;
+	padding: 4rem 1rem 2rem 1rem;
 }
 
 .section-title {
@@ -84,10 +91,16 @@ a {
 	font-size: 1rem;
 }
 
-/* Header******************************** */
+.main-button:hover {
+	background-color: var(--red-color);
+	color: var(--white-color);
+	transition: 0.5s linear;
+}
+
+/* Header*********************************/
 .header-container {
 	width: 100%;
-	padding: 1rem;
+	padding: 0.5rem 1rem;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -99,7 +112,7 @@ a {
 }
 
 .header-container img {
-	height: 1.5rem;
+	height: 1.2rem;
 }
 
 .desktop-navbar {
@@ -107,8 +120,13 @@ a {
 	display: none;
 	justify-content: center;
 	align-items: center;
-	gap: 2rem;
-	padding: 1rem;
+	gap: 1rem;
+	padding: 0 1rem;
+}
+
+.desktop-navbar a:hover {
+	color: var(--red-color);
+	transition: 0.5s linear;
 }
 
 .header-button {
@@ -116,9 +134,16 @@ a {
 	background-color: var(--red-color);
 	color: var(--white-color);
 	font-family: var(--main-font);
-	padding: 0.5rem 1rem;
+	padding: 0.5rem;
+	width: 6rem;
 }
 
+.header-button:hover {
+	background-color: transparent;
+	transition: 0.5s linear;
+}
+
+/* Mobile navbar******************************* */
 .mobile-navbar {
 	width: 100%;
 	position: fixed;
@@ -149,7 +174,6 @@ a {
 /* Home ******************************** */
 .home-background {
 	width: 100%;
-	min-height: 100vh;
 	background-image: url("../assets/main-back-img.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -158,44 +182,30 @@ a {
 }
 
 .home-container {
-	position: relative;
-	min-height: 100vh;
 	width: 100%;
-	background-color: rgb(0, 0, 0, 0.8);
+	background: var(--back-gradient);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	gap: 3rem;
+	position: relative;
 }
 
-.home-title {
-	font-size: 4rem;
+.home-left-content {
 	width: 100%;
-	top: 0;
-	z-index: 50;
-}
-
-.home-content {
 	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-	width: 100%;
-}
-
-.home-left {
-	display: flex;
+	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
-	flex-direction: column;
 	font-weight: 300;
-	gap: 3rem;
-	width: 50%;
+	width: 100%;
+	gap: 2rem;
 	z-index: 50;
 }
 
-.home-left p {
-	width: 100%;
-	top: 0;
+.home-left-title {
+	font-size: 3rem;
 }
 
 .home-left button {
@@ -203,63 +213,54 @@ a {
 	text-align: left;
 }
 
-.home-right {
-	width: 50%;
-	height: 100%;
+.home-left-numbers {
+	width: 100%;
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
-	flex-direction: column;
+	z-index: 30;
+	gap: 0.5rem;
+}
+
+.home-left-numbers span {
+	font-family: var(--main-font);
+	font-size: 2rem;
+}
+
+.home-left-numbers p {
+	font-size: 0.7rem;
+	text-align: center;
+}
+
+.home-left-numbers div {
+	border: 1px solid var(--white-color);
+	opacity: 0.4;
+	height: 4rem;
+}
+
+.home-right {
+	width: 100%;
+	display: flex;
 	position: relative;
-	bottom: 0;
-	z-index: 10;
-	top: 30%;
 }
 
 .home-right img {
-	max-width: 100%;
-	position: absolute;
-	top: 5rem;
+	width: 70%;
+	z-index: 20;
 }
 
 .level-up-text {
-	width: 100%;
-	font-size: 3rem;
+	position: absolute;
 	font-family: "Poppins", sans-serif;
+	font-size: 20vw;
 	font-weight: 900;
 	text-align: end;
 	color: transparent;
 	-webkit-text-stroke: 0.5px var(--white-color);
 	-ms-text-stroke: 0.5px var(--white-color);
-	position: absolute;
-	top: 0;
-}
-
-.home-numbers {
-	width: 100%;
-	padding-top: 1rem;
-	display: flex;
-	justify-content: start;
-	align-items: center;
-	text-align: center;
-	margin-top: 1rem;
-	z-index: 30;
-	gap: 1rem;
-}
-
-.home-numbers span {
-	font-family: var(--main-font);
-	font-size: 1.5rem;
-}
-
-.home-numbers p {
-	font-size: 0.6rem;
-}
-
-.home-numbers div {
-	border: 1px solid var(--white-color);
-	opacity: 0.4;
-	height: 4rem;
+	top: -2rem;
+	right: 0;
+	z-index: 10;
 }
 
 /* Media Queries ******************************** */
@@ -269,21 +270,22 @@ a {
 	}
 
 	.section-padding {
-		padding: 4rem 3rem 2rem 3rem;
+		padding: 4rem 2rem 2rem 2rem;
 	}
 
-	.home-right img {
-		top: 0;
-	}
-
-	.level-up-text {
-		top: -2rem;
+	.header-container {
+		padding: 0.5rem 2rem;
 	}
 }
 
 @media screen and (min-width: 600px) {
 	:root {
-		font-size: 18px;
+		--back-gradient: linear-gradient(
+			90deg,
+			rgba(3, 3, 3, 1) 0%,
+			rgba(3, 3, 3, 0.83) 48%,
+			rgba(13, 13, 13, 0.71) 100%
+		);
 	}
 
 	.desktop-navbar {
@@ -294,13 +296,25 @@ a {
 		display: none;
 	}
 
+	.home-container {
+		flex-direction: row;
+		gap: 0;
+	}
+
+	.home-left {
+		width: 50%;
+	}
+
+	.home-right {
+		width: 50%;
+	}
+
 	.home-right img {
-		top: -5rem;
+		width: 100%;
 	}
 
 	.level-up-text {
-		top: -7rem;
-		font-size: 4rem;
+		font-size: 10vw;
 	}
 }
 
@@ -310,16 +324,15 @@ a {
 	}
 
 	.section-padding {
-		padding: 4rem 4rem 2rem 4rem;
+		padding: 4rem 3rem 2rem 3rem;
 	}
 
-	.home-right img {
-		width: 80%;
-		top: -7rem;
+	.header-container {
+		padding: 0.5rem 3rem;
 	}
 
-	.level-up-text {
-		top: -11rem;
+	.home-left-title {
+		font-size: 3.5rem;
 	}
 }
 
@@ -329,22 +342,15 @@ a {
 	}
 
 	.section-padding {
-		padding: 4rem 5rem 2rem 5rem;
+		padding: 4rem 3.5rem 2rem 3.5rem;
 	}
 
-	.home-left {
-		width: 60%;
+	.header-container {
+		padding: 0.5rem 3.5rem;
 	}
 
 	.home-right img {
-		width: 70%;
-		top: -10rem;
-		left: -2rem;
-	}
-
-	.level-up-text {
-		top: -15rem;
-		font-size: 6rem;
+		width: 80%;
 	}
 }
 
@@ -354,10 +360,18 @@ a {
 	}
 
 	.section-padding {
-		padding: 4rem 6rem 2rem 6rem;
+		padding: 4rem 5rem 2rem 5rem;
 	}
 
-	.level-up-text {
-		font-size: 7rem;
+	.header-container {
+		padding: 0.5rem 5rem;
+	}
+
+	.home-left-title {
+		font-size: 4rem;
+	}
+
+	.home-right img {
+		width: 70%;
 	}
 }
