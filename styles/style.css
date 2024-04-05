@@ -25,7 +25,7 @@ body {
 	background-color: var(--black-color);
 	color: var(--white-color);
 	position: relative;
-	margin-bottom: 2rem;
+	margin-bottom: 4rem;
 }
 
 h1,
@@ -357,30 +357,26 @@ a {
 .contact {
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 	align-items: center;
-	gap: 1rem;
+	border: 1px solid var(--red-color);
 }
 
-.contact-image {
+.contact-form {
 	width: 100%;
-	display: flex;
-	justify-content: center;
-}
-
-.contact-image img {
-	width: 70%;
-	margin: auto;
+	padding: 1rem;
 }
 
 .grid-form {
 	width: 100%;
-	margin-top: 1rem;
+	margin-top: 2rem;
 }
 
 .grid-form input {
 	border: 1px solid var(--white-color);
 	background-color: transparent;
 	padding: 0.6rem;
+	width: 100%;
 }
 
 .grid-form {
@@ -406,6 +402,16 @@ a {
 	grid-area: input-3;
 }
 
+.contact-image {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.contact-image img {
+	width: 80%;
+}
+
 /* Footer*********************************/
 .footer-content {
 	display: flex;
@@ -416,13 +422,30 @@ a {
 	padding-bottom: 2rem;
 }
 
+.footer-links {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+}
+
 .footer-reserved {
 	border-top: 1px solid var(--gray-color);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-left: 2rem;
+	margin-right: 2rem;
+	padding-top: 0.6rem;
+	padding-bottom: 0.6rem;
 }
 
 .footer-reserved p {
 	font-size: 0.6rem;
 	color: var(--gray-color);
+	padding-right: 1rem;
+	padding-left: 1rem;
 }
 
 /* Media Queries ******************************** */
@@ -515,6 +538,28 @@ a {
 	.experience-img-container {
 		width: 50%;
 	}
+
+	/* Contact************************************/
+	.contact {
+		flex-direction: row-reverse;
+		position: relative;
+	}
+
+	.contact-form {
+		width: 65%;
+	}
+
+	.contact-image {
+		width: 40%;
+	}
+
+	.contact-image img {
+		height: calc(100% + 1.1rem);
+		width: auto;
+		position: absolute;
+		top: -1rem;
+		left: -3rem;
+	}
 }
 
 @media screen and (min-width: 1024px) {
@@ -540,6 +585,22 @@ a {
 	/* Service ****************************** */
 	.service-article {
 		max-width: calc(50% - 1rem);
+	}
+
+	/* Contact************************************/
+	.contact-form {
+		width: 60%;
+		padding: 2rem;
+	}
+
+	.contact-image {
+		width: 40%;
+	}
+
+	.contact-image img {
+		height: calc(100% + 2.1rem);
+		top: -2rem;
+		left: -0rem;
 	}
 }
 
@@ -569,6 +630,16 @@ a {
 
 	/* Experience**************************** */
 	.experience-img-container {
+		width: 40%;
+	}
+
+	/* Contact************************************/
+	.contact-form {
+		width: 70%;
+		padding: 3rem;
+	}
+
+	.contact-image {
 		width: 40%;
 	}
 }
