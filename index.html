@@ -31,9 +31,8 @@
 		></script>
 	</head>
 	<body>
-		<header class="header-container">
+		<header class="header-container section-padding-x">
 			<a href="/"><img src="./assets/images/irongym-logo.png" /></a>
-
 			<nav class="desktop-navbar">
 				<a href="#home">HOME</a>
 				<a href="#service">SERVICE</a>
@@ -60,7 +59,7 @@
 		<main>
 			<section id="home">
 				<div class="home-background">
-					<div class="section-padding home-container">
+					<div class="section-padding-x section-padding-y home-container">
 						<div class="home-left">
 							<h1 class="home-left-title">
 								READY TO TRAIN
@@ -96,7 +95,7 @@
 				</div>
 			</section>
 			<section id="service">
-				<div class="section-padding">
+				<div class="section-padding-x section-padding-y">
 					<div class="section-title">
 						<h2>WHY <span>CHOOSE US</span></h2>
 						<p>
@@ -143,7 +142,7 @@
 						</article>
 					</div>
 				</div>
-				<div class="section-padding experience">
+				<div class="section-padding-x section-padding-y experience">
 					<div class="section-subtitle">
 						<h3>WE HAVE A LOT OF <br /><span>EXPERIENCE</span></h3>
 						<p>
@@ -179,7 +178,7 @@
 			</section>
 			<section
 				id="trainers"
-				class="section-padding"
+				class="section-padding-x section-padding-y"
 			>
 				<div>
 					<div class="section-title">
@@ -193,7 +192,7 @@
 			</section>
 			<section
 				id="testimonial"
-				class="section-padding"
+				class="section-padding-x section-padding-y"
 			>
 				<div class="section-title">
 					<h2>WHAT <span>CLIENTS SAY</span> WITH US</h2>
@@ -201,20 +200,64 @@
 			</section>
 			<section
 				id="contact-us"
-				class="section-padding"
+				class="section-padding-x section-padding-y contact"
 			>
-				<div class="section-subtitle">
-					<h3>LET´S START GYM <br /><span>TRAINING NOW</span></h3>
-					<p>
-						Get 50% off the first three classes you sign up for this month any
-						GYM membership
-					</p>
+				<div class="contact-form">
+					<div class="section-subtitle">
+						<h3>LET´S START GYM <br /><span>TRAINING NOW</span></h3>
+						<p>
+							Get 50% off the first three classes you sign up for this month any
+							GYM membership
+						</p>
+					</div>
+					<form>
+						<div class="grid-form">
+							<input
+								class="input-1"
+								type="text"
+								name="name"
+								id="name"
+								placeholder="Enter Your Name..."
+							/>
+							<input
+								class="input-2"
+								type="tel"
+								name="tel"
+								id="tel"
+								placeholder="Phone Numbers..."
+							/>
+							<input
+								class="input-3"
+								type="email"
+								name="email"
+								id="email"
+								placeholder="Enter Your Name..."
+							/>
+						</div>
+						<input
+							type="submit"
+							class="main-button"
+						/>
+					</form>
+				</div>
+				<div class="contact-image">
+					<img
+						src="./assets/images/contacts-image.png"
+						alt="man"
+					/>
 				</div>
 			</section>
 		</main>
-		<footer>
-			<div class="section-padding">
-				<img src="./assets/images/irongym-logo.png" />
+		<footer class="section-padding-x section-padding-y">
+			<div class="footer-content">
+				<a href="/"><img src="./assets/images/irongym-logo.png" /></a>
+				<nav class="footer-links">
+					<a href="#home">HOME</a>
+					<a href="#service">SERVICE</a>
+					<a href="#trainers">TRAINERS</a>
+					<a href="#testimonial">TESTIMONIAL</a>
+					<a href="#contact-us">CONTACT US</a>
+				</nav>
 			</div>
 			<div class="footer-reserved">
 				<p>Privacy | Terms and condition</p>
