@@ -1,3 +1,15 @@
+// ************Buttons - Events Delegation************************************************************************
+function aboutUsDetails(e) {
+	alert(`About Us Details`);
+}
+
+document.addEventListener("click", (e) => {
+	if (e.target.matches(".about-us-btn")) {
+		aboutUsDetails(e);
+	}
+});
+
+// ***********Service Section****************************************************************
 const chooseUs = [
 	{
 		id: "01",
@@ -22,26 +34,16 @@ const chooseUs = [
 ];
 
 const $serviceContent = document.querySelector(".service-content");
-const $template = document.getElementById("template-card").content;
+const $template = document.getElementById("service-template").content;
 const $fragment = document.createDocumentFragment();
 
 chooseUs.forEach((el) => {
-	const $article = document.createElement("article");
-	$article.classList.add("service-article");
+	$template.querySelector("h5").textContent = el.id;
+	$template.querySelector("span").textContent = el.title;
+	$template.querySelector("p").textContent = el.text;
 
-	const $h5 = document.createElement("h5");
-	$h5.textContent = el.id;
-	$article.appendChild($h5);
-
-	const $span = document.createElement("span");
-	$span.textContent = el.title;
-	$article.appendChild($span);
-
-	const $p = document.createElement("p");
-	$p.textContent = el.text;
-	$article.appendChild($p);
-
-	$fragment.appendChild($article);
+	let $clone = document.importNode($template, true);
+	$fragment.appendChild($clone);
 });
 
 $serviceContent.appendChild($fragment);
