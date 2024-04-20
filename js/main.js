@@ -1,12 +1,15 @@
-// ************Buttons - Events Delegation************************************************************************
-function aboutUsDetails(e) {
-	alert(`About Us Details`);
-}
-
 document.addEventListener("click", (e) => {
-	if (e.target.matches(".about-us-btn")) {
-		aboutUsDetails(e);
+	// ************Main Buttons************************************************************************
+	function aboutUsDetails() {
+		const showMore = (e) => {
+			alert(`About Us Details`);
+		};
+
+		if (e.target.matches(".about-us-btn")) {
+			showMore();
+		}
 	}
+	aboutUsDetails();
 });
 
 // ***********Service Section****************************************************************
@@ -47,3 +50,5 @@ chooseUs.forEach((el) => {
 });
 
 $serviceContent.appendChild($fragment);
+
+// ***********Top Button****************************************************************

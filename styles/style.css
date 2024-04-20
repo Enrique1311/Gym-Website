@@ -26,6 +26,7 @@ body {
 	color: var(--white-color);
 	position: relative;
 	margin-bottom: 4rem;
+	position: relative;
 }
 
 h1,
@@ -444,8 +445,8 @@ a {
 	justify-content: space-between;
 	align-items: center;
 	flex-wrap: wrap;
-	margin-left: 2rem;
-	margin-right: 2rem;
+	margin-left: 1rem;
+	margin-right: 1rem;
 	padding-top: 0.6rem;
 	padding-bottom: 0.6rem;
 }
@@ -455,6 +456,27 @@ a {
 	color: var(--gray-color);
 	padding-right: 1rem;
 	padding-left: 1rem;
+}
+
+/* Top Button **************************************** */
+.top-btn {
+	position: fixed;
+	bottom: 6.5rem;
+	right: 1rem;
+	border: 1px solid var(--red-color);
+	color: var(--red-color);
+	padding: 0.5rem 0.2rem;
+	font-size: 1.5rem;
+	background-color: var(--black-color);
+	z-index: 100;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.top-btn:hover {
+	transform: scale(1.2);
+	background-color: var(--red-color);
+	color: var(--black-color);
 }
 
 /* Media Queries ******************************** */
@@ -571,6 +593,12 @@ a {
 		position: absolute;
 		top: -1rem;
 		left: -3rem;
+	}
+
+	/* Top Button **************************************** */
+	.top-btn {
+		bottom: 2.5rem;
+		right: 1rem;
 	}
 }
 
