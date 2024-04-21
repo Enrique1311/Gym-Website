@@ -1,5 +1,31 @@
-document.addEventListener("click", (e) => {
-	// ************Main Buttons************************************************************************
+const d = document,
+	w = window;
+
+// Network Status********************************
+function networkStatus() {
+	const isOnline = () => {
+		const $div = d.createElement("div");
+
+		if (navigator.onLine) {
+			$div.textContent = "Your connection was restored!";
+			$div.classList.remove("offline");
+			$div.classList.add("online");
+		} else {
+			$div.textContent = "Lost connection!";
+			$div.classList.remove("online");
+			$div.classList.add("offline");
+		}
+		d.body.insertAdjacentElement("afterbegin", $div);
+		setTimeout(() => d.body.removeChild($div), 3000);
+	};
+
+	w.addEventListener("online", (e) => isOnline());
+	w.addEventListener("offline", (e) => isOnline());
+}
+networkStatus();
+
+// ************Main Buttons******************************************************
+d.addEventListener("click", (e) => {
 	function aboutUsDetails() {
 		const showMore = (e) => {
 			alert(`About Us Details`);
@@ -10,6 +36,23 @@ document.addEventListener("click", (e) => {
 		}
 	}
 	aboutUsDetails();
+});
+
+// ***********Top Button****************************************************************
+w.addEventListener("scroll", (e) => {
+	let scrollTop = d.documentElement.scrollTop;
+
+	if (scrollTop > 100) {
+		d.querySelector(".top-btn").classList.remove("hidden-btn");
+	} else {
+		d.querySelector(".top-btn").classList.add("hidden-btn");
+	}
+});
+
+d.addEventListener("click", (e) => {
+	if (e.target.matches(".top-btn") || e.target.matches(".top-btn i")) {
+		w.scrollTo({ behavior: "smooth", top: 0 });
+	}
 });
 
 // ***********Service Section****************************************************************
@@ -50,5 +93,3 @@ chooseUs.forEach((el) => {
 });
 
 $serviceContent.appendChild($fragment);
-
-// ***********Top Button****************************************************************
