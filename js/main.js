@@ -1,7 +1,7 @@
 const d = document,
 	w = window;
 
-// Network Status********************************
+// ************ Network Status ********************************
 function networkStatus() {
 	const isOnline = () => {
 		const $div = d.createElement("div");
@@ -24,7 +24,7 @@ function networkStatus() {
 }
 networkStatus();
 
-// ************Main Buttons******************************************************
+// ************ Main Buttons ******************************************************
 d.addEventListener("click", (e) => {
 	function aboutUsDetails() {
 		const showMore = (e) => {
@@ -38,7 +38,7 @@ d.addEventListener("click", (e) => {
 	aboutUsDetails();
 });
 
-// ***********Top Button****************************************************************
+// *********** Top Button ****************************************************************
 w.addEventListener("scroll", (e) => {
 	let scrollTop = d.documentElement.scrollTop;
 
@@ -55,7 +55,7 @@ d.addEventListener("click", (e) => {
 	}
 });
 
-// ***********Service Section****************************************************************
+// *********** Service Section ****************************************************************
 const chooseUs = [
 	{
 		id: "01",
@@ -79,17 +79,68 @@ const chooseUs = [
 	},
 ];
 
-const $serviceContent = document.querySelector(".service-content");
-const $template = document.getElementById("service-template").content;
-const $fragment = document.createDocumentFragment();
+function service() {
+	const $serviceContent = document.querySelector(".service-content");
+	const $serviceTemplate = document.getElementById("service-template").content;
+	const $fragment = document.createDocumentFragment();
 
-chooseUs.forEach((el) => {
-	$template.querySelector("h5").textContent = el.id;
-	$template.querySelector("span").textContent = el.title;
-	$template.querySelector("p").textContent = el.text;
+	chooseUs.forEach((el) => {
+		$serviceTemplate.querySelector("h5").textContent = el.id;
+		$serviceTemplate.querySelector("span").textContent = el.title;
+		$serviceTemplate.querySelector("p").textContent = el.text;
 
-	let $clone = document.importNode($template, true);
-	$fragment.appendChild($clone);
-});
+		let $clone = document.importNode($serviceTemplate, true);
+		$fragment.appendChild($clone);
+	});
 
-$serviceContent.appendChild($fragment);
+	$serviceContent.appendChild($fragment);
+}
+service();
+
+// ***********Trainers Section****************************************************************
+
+const trainers = [
+	{
+		id: "1",
+		name: "Borney Exiteid",
+		trainerImg: "../assets/images/borney-image.png",
+	},
+	{
+		id: "2",
+		name: "Elsa Windia",
+		trainerImg: "../assets/images/elsa-img.png",
+	},
+	{
+		id: "3",
+		name: "Geourge Aryo",
+		trainerImg: "../assets/images/geourge-img.png",
+	},
+	{
+		id: "4",
+		name: "Angela Mellisa",
+		trainerImg: "../assets/images/angela-img.png",
+	},
+];
+
+function trainersSlider() {
+	const $sliderContent = d.querySelector(".trainers-slider");
+	const $serviceContent = document.querySelector(".service-content");
+
+	const $trainersTemplate = d.getElementById(
+		"trainers-slider-template"
+	).content;
+	const $fragment = d.createDocumentFragment();
+
+	trainers.forEach((el) => {
+		$trainersTemplate
+			.querySelector(".trainers-slider-image")
+			.setAttribute("src", el.trainerImg);
+		console.log($trainersTemplate);
+		$trainersTemplate.querySelector("h4").textContent = el.name;
+
+		let $clone = d.importNode($trainersTemplate, true);
+		$fragment.appendChild($clone);
+	});
+	$sliderContent.appendChild($fragment);
+}
+trainersSlider();
