@@ -118,29 +118,49 @@ const trainers = [
 	{
 		id: "4",
 		name: "Angela Mellisa",
-		trainerImg: "../assets/images/angela-img.png",
+		trainerImg: "../assets/images/angela-img.jpg",
 	},
 ];
 
 function trainersSlider() {
 	const $sliderContent = d.querySelector(".trainers-slider");
-	const $serviceContent = document.querySelector(".service-content");
-
 	const $trainersTemplate = d.getElementById(
 		"trainers-slider-template"
 	).content;
-	const $fragment = d.createDocumentFragment();
+	const $slideFragment = d.createDocumentFragment();
+
+	const $sliderBtnsContent = d.querySelector(".trainers-slider-btns");
+	const $sliderBtns = d.querySelector(".trainers-slider-btns");
+	const $sliderBtnsTemplate = d.getElementById("slider-btns-template").content;
+	const $slideBtnsFragment = d.createDocumentFragment();
+
+	let i = 0;
 
 	trainers.forEach((el) => {
+		// Slider Items
+		// $trainersTemplate
+		// 	.querySelector(".trainers-slider-card")
+		// 	.setAttribute("id", `img-${el.id}`);
 		$trainersTemplate
 			.querySelector(".trainers-slider-image")
 			.setAttribute("src", el.trainerImg);
-		console.log($trainersTemplate);
-		$trainersTemplate.querySelector("h4").textContent = el.name;
 
-		let $clone = d.importNode($trainersTemplate, true);
-		$fragment.appendChild($clone);
+		$trainersTemplate.querySelector("h4").textContent = el.name;
+		let $sliderClone = d.importNode($trainersTemplate, true);
+		$slideFragment.appendChild($sliderClone);
+
+		// Slider buttons
+		// $sliderBtnsTemplate
+		// 	.querySelector(".slider-btn")
+		// 	.setAttribute("href", `#img-${el.id}`);
+		let $sliderBtnClone = d.importNode($sliderBtnsTemplate, true);
+		$sliderBtns.appendChild($sliderBtnClone);
 	});
-	$sliderContent.appendChild($fragment);
+
+	$sliderContent.appendChild($slideFragment);
+	$sliderBtnsContent.appendChild($slideBtnsFragment);
+	d.querySelector(".slider-btn").classList.add("active-btn");
+
+	d.addEventListener("click", (e) => {});
 }
 trainersSlider();

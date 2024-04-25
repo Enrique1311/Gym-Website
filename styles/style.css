@@ -391,7 +391,8 @@ a {
 .trainers-slider {
 	display: flex;
 	gap: 2rem;
-	overflow-x: hidden;
+	overflow-x: auto;
+	scrollbar-width: none;
 }
 
 .trainers-slider-card {
@@ -399,6 +400,7 @@ a {
 	position: relative;
 	max-width: 600px;
 	min-width: 250px;
+	object-fit: cover;
 }
 
 .trainers-slider-image {
