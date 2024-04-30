@@ -123,24 +123,18 @@ const trainers = [
 ];
 
 function trainersSlider() {
+	// Slider Cards
 	const $sliderContent = d.querySelector(".trainers-slider");
 	const $trainersTemplate = d.getElementById(
 		"trainers-slider-template"
 	).content;
 	const $slideFragment = d.createDocumentFragment();
 
-	const $sliderBtnsContent = d.querySelector(".trainers-slider-btns");
-	const $sliderBtns = d.querySelector(".trainers-slider-btns");
-	const $sliderBtnsTemplate = d.getElementById("slider-btns-template").content;
-	const $slideBtnsFragment = d.createDocumentFragment();
-
-	let i = 0;
-
 	trainers.forEach((el) => {
-		// Slider Items
-		// $trainersTemplate
-		// 	.querySelector(".trainers-slider-card")
-		// 	.setAttribute("id", `img-${el.id}`);
+		//  Slider Items
+		$trainersTemplate
+			.querySelector(".trainers-slider-card")
+			.setAttribute("id", `img-${el.id}`);
 		$trainersTemplate
 			.querySelector(".trainers-slider-image")
 			.setAttribute("src", el.trainerImg);
@@ -148,19 +142,21 @@ function trainersSlider() {
 		$trainersTemplate.querySelector("h4").textContent = el.name;
 		let $sliderClone = d.importNode($trainersTemplate, true);
 		$slideFragment.appendChild($sliderClone);
-
-		// Slider buttons
-		// $sliderBtnsTemplate
-		// 	.querySelector(".slider-btn")
-		// 	.setAttribute("href", `#img-${el.id}`);
-		let $sliderBtnClone = d.importNode($sliderBtnsTemplate, true);
-		$sliderBtns.appendChild($sliderBtnClone);
 	});
 
 	$sliderContent.appendChild($slideFragment);
-	$sliderBtnsContent.appendChild($slideBtnsFragment);
-	d.querySelector(".slider-btn").classList.add("active-btn");
 
-	d.addEventListener("click", (e) => {});
+	// Slider Buttons
+	const $sliderItem = d.querySelector(".trainers-slider");
+	const $slideButtons = d.querySelectorAll(".slider-btn");
+	console.log($sliderItem, $slideButtons);
+
+	$slideButtons.forEach((btn) => {
+		btn.addEventListener("click", () => {
+			const direction = btn.id === "left-btn" ? -1 : 1;
+			const scrollAmount = ($sliderItem.clientWidth * direction) / 1.75;
+			$sliderItem.scrollBy({ left: scrollAmount, behavior: "smooth" });
+		});
+	});
 }
 trainersSlider();

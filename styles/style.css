@@ -393,6 +393,7 @@ a {
 	gap: 2rem;
 	overflow-x: auto;
 	scrollbar-width: none;
+	position: relative;
 }
 
 .trainers-slider-card {
@@ -426,24 +427,27 @@ a {
 }
 
 .trainers-slider-btns {
+	margin-top: 1rem;
 	width: 100%;
-	padding-top: 2rem;
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
 	gap: 1rem;
+	z-index: 20;
 }
 
 .slider-btn {
-	width: 0.6rem;
-	height: 0.6rem;
-	background-color: var(--gray-color);
+	width: 1.5rem;
+	height: 1.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--black-color);
+	border-radius: 50%;
+	border: 2px solid var(--red-color);
 	transition: transform 0.3s ease;
-}
-
-.slider-btn.active-btn {
-	background-color: var(--red-color);
-	transform: scale(1.4);
+	color: var(--red-color);
+	cursor: pointer;
 }
 
 /* Contact************************************/
