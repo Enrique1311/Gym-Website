@@ -450,6 +450,70 @@ a {
 	cursor: pointer;
 }
 
+/* Testimonial ******************************** */
+.slider-container {
+	overflow: hidden;
+	position: relative;
+}
+
+.testimonial-slider {
+	display: flex;
+	flex-direction: row;
+	width: 800%;
+	margin-left: -100%;
+}
+
+.testimonial-slider-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	text-align: center;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.testimonial-slider-card * {
+	width: fit-content;
+}
+
+.testimonial-card-image {
+	border: 1px solid var(--red-color);
+	position: relative;
+	max-width: 10rem;
+	min-width: 10rem;
+	object-fit: cover;
+}
+
+.testimonial-slider-btns {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+	z-index: 20;
+}
+
+.slider-btn-2 {
+	font-size: 2rem;
+	background-color: transparent;
+	border: none;
+	transition: transform 0.3s ease;
+	color: var(--white-color);
+	cursor: pointer;
+	opacity: 0.5;
+}
+
+.slider-btn-2:hover {
+	opacity: 1;
+}
+
 /* Contact************************************/
 .contact {
 	display: flex;
