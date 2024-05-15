@@ -1,6 +1,6 @@
 <h1 align="left">Gym Website</h1>
 
-![BANNER!](craft-beer.png)
+![BANNER!](gym-website.png)
 
 <h3 align="left">Experience seamless browsing on our responsive website crafted with HTML, CSS, and JavaScript. Our site adapts flawlessly to any device, providing an immersive user experience whether you're on a desktop, tablet, or smartphone. With smooth navigation and dynamic content, explore our offerings effortlessly and stay engaged with interactive features powered by JavaScript..</h3>
 
