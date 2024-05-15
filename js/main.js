@@ -120,6 +120,11 @@ const trainers = [
 		name: "Angela Mellisa",
 		trainerImg: "../assets/images/trainers-slider/angela-img.jpg",
 	},
+	{
+		id: "5",
+		name: "Ann Williamson",
+		trainerImg: "../assets/images/trainers-slider/ann-img.jpg",
+	},
 ];
 
 function trainersSlider() {
@@ -294,6 +299,10 @@ function moveSlider() {
 
 	$btnRight.addEventListener("click", () => nextCard());
 	$btnLeft.addEventListener("click", () => prevCard());
+
+	setInterval(() => {
+		nextCard();
+	}, 3000);
 }
 
 moveSlider();

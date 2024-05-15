@@ -27,6 +27,7 @@ body {
 	position: relative;
 	margin-bottom: 4rem;
 	position: relative;
+	overflow-x: hidden;
 }
 
 h1,
@@ -452,7 +453,6 @@ a {
 
 /* Testimonial ******************************** */
 .slider-container {
-	overflow: hidden;
 	position: relative;
 }
 
