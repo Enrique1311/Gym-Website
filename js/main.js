@@ -27,7 +27,7 @@ networkStatus();
 // ************ Main Buttons ******************************************************
 d.addEventListener("click", (e) => {
 	function aboutUsDetails() {
-		const showMore = (e) => {
+		const showMore = () => {
 			alert(`About Us Details`);
 		};
 
@@ -235,7 +235,7 @@ const testimonials = [
 ];
 
 function testimonialSlider() {
-	// Trainers Slider Cards
+	// Testimonial Slider Cards
 	const $testimonialsSliderContent = d.querySelector(".testimonial-slider"),
 		$testimonialsTemplate = d.getElementById(
 			"testimonial-slider-template"
@@ -257,42 +257,39 @@ function testimonialSlider() {
 	});
 	$testimonialsSliderContent.appendChild($testimonialsFragment);
 }
-
 testimonialSlider();
 
 function moveSlider() {
 	const $testimonialSlider = d.querySelector(".testimonial-slider");
 	let $sliderCards = d.querySelectorAll(".testimonial-slider-card");
-	let lastSlide = $sliderCards[$sliderCards.length - 1];
+	let $lastSlide = $sliderCards[$sliderCards.length - 1];
 	const $btnLeft = d.querySelector(".left-btn-2");
 	const $btnRight = d.querySelector(".right-btn-2");
 
-	console.log($btnRight);
-
-	$testimonialSlider.insertAdjacentElement("afterbegin", lastSlide);
+	$testimonialSlider.insertAdjacentElement("afterbegin", $lastSlide);
 
 	const nextCard = () => {
-		let firstSlide = d.querySelectorAll(".testimonial-slider-card")[0];
+		let $firstSlide = d.querySelectorAll(".testimonial-slider-card")[0];
 		$testimonialSlider.style.marginLeft = "-200%";
 		$testimonialSlider.style.transition = "all 0.5s linear";
 
 		setTimeout(() => {
 			$testimonialSlider.style.transition = "none";
-			$testimonialSlider.insertAdjacentElement("beforeend", firstSlide);
+			$testimonialSlider.insertAdjacentElement("beforeend", $firstSlide);
 			$testimonialSlider.style.marginLeft = "-100%";
 		}, 500);
 	};
 
 	const prevCard = () => {
-		let $sliderCards = d.querySelectorAll(".testimonial-slider-card");
-		let lastSlide = $sliderCards[$sliderCards.length - 1];
+		$sliderCards = d.querySelectorAll(".testimonial-slider-card");
+		$lastSlide = $sliderCards[$sliderCards.length - 1];
 
 		$testimonialSlider.style.marginLeft = "0";
 		$testimonialSlider.style.transition = "all 0.5s linear";
 
 		setTimeout(() => {
 			$testimonialSlider.style.transition = "none";
-			$testimonialSlider.insertAdjacentElement("afterbegin", lastSlide);
+			$testimonialSlider.insertAdjacentElement("afterbegin", $lastSlide);
 			$testimonialSlider.style.marginLeft = "-100%";
 		}, 500);
 	};
