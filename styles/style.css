@@ -454,6 +454,7 @@ a {
 /* Testimonial ******************************** */
 .slider-container {
 	position: relative;
+	overflow-x: hidden;
 }
 
 .testimonial-slider {
