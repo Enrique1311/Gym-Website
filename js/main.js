@@ -69,7 +69,7 @@ const chooseUs = [
 	},
 	{
 		id: "03",
-		title: "Equipment and facilities",
+		title: "Nutrition counseling",
 		text: "Our gyms offer personalized training sessions with certified personal trainers who create customized workout plans based on individual goals",
 	},
 	{
